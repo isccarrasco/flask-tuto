@@ -1,3 +1,6 @@
 from project import application
 
-application.run(debug=True)
+if __name__ == "__main__":
+    # Here can change the port or
+    # other runner configuration
+    application.run(debug=True)

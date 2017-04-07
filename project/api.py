@@ -10,6 +10,7 @@ person_fields = {
     'address': fields.String
 }
 
+
 class PersonsList(Resource):
     def __init__(self):
         self.reqparse = reqparse.RequestParser(bundle_errors=True)
@@ -21,8 +22,6 @@ class PersonsList(Resource):
         persons = Person.query.all()
         return {'persons': map(lambda p: marshal(p, person_fields), persons)}
 
-
-
     def post(self):
         args = self.reqparse.parse_args()
 
@@ -30,8 +29,6 @@ class PersonsList(Resource):
         person = Person.query.filter_by(person_id=person_id).first()
 
         return {'person': marshal(person, person_fields)}
-
-
 
     def put(self):
         return {'data': False}
