@@ -1,11 +1,12 @@
 from project import application
-from project import database
 from models import Person
+
 
 @application.route('/')
 @application.route('/index')
 def index():
     return "Hello, World!"
+
 
 @application.route('/home')
 def home():
